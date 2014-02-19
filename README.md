@@ -13,8 +13,6 @@ Sorry but the project is in french. A translation will come...
 To fill the "objects" you want to put in your web app, just go to "assets/objects" and copy the exemple.
 There are tree colors : orange, blue and yellow.
 
-```
-
 ## Requirements for the host ##
 * A web server: like "localhost" or a website.
 * PHP: I develop this project with the last PHP (5.5).
@@ -23,8 +21,6 @@ There are tree colors : orange, blue and yellow.
 ## Requirements for the client ##
 * Internet connection because of the two JQuery librairies host on Google.
 * Javascript support with a recent browser (IE 8+, chrome, firefox...).
-
-```
 
 ## List of the librairies used ##
 * First of all : [JQuery](http://jquery.com/) and [JQuery UI](http://jqueryui.com/).
