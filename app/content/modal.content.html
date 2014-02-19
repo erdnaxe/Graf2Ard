@@ -1,0 +1,135 @@
+<!-- Bouton gestion fichier -->
+<div class="modal fade" id="new" tabindex="-1" role="dialog" aria-labelledby="new" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Nouveau fichier</h4>
+            </div>
+            <div class="modal-body">
+                <p>Le fait de créer un nouveau fichier fermera votre ancien fichier. Il sera ensuite irrécupérable si vous ne l'avez pas enregistrer auparavent.</p>
+                <p>&Eacute;tes vous sûre de vouloir continuer ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirmer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="open" tabindex="-1" role="dialog" aria-labelledby="open" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Ouvrir un fichier Grafcet</h4>
+            </div>
+            <form method="GET" action="#">
+                <div class="modal-body">
+                    <p>Vous pouvez ouvrir votre fichier Grafcet enregistré grâce à ce lolgiciel. Seul le format <em>JSON</em> est supporté pour le moment.</p>
+                    <p>
+
+                        A venir (un formulaire d'envoie)...
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Ouvrir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="save" tabindex="-1" role="dialog" aria-labelledby="save" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Sauvegarder le fichier Grafcet</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vous pouvez sauvegarder votre fichier Grafcet seulement en format <em>JSON</em>. Cela permettra de l'ouvrir à nouveau plus tard sans tout recommencer.</p>
+                <p>A venir (un lien de téléchargement du fichier généré en <em>JavaScript</em>)...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Boutons importation / exportation -->
+<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-labelledby="import" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="export" tabindex="-1" role="dialog" aria-labelledby="export" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- A propos -->
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="about" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">&Agrave; propos de l'application</h4>
+            </div>
+            <div class="modal-body">
+                <p>Cette application a été développé par <em>erdnaxe</em>.</p>
+                <p>Le code source est disponible sur <em>Github</em> à cette addresse : <em>(à venir...)</em>. Le code source est sur license (à venir). Vous pouvez donc faire un <em>fork</em> de cette application.</p>
+                <p>Vous pouvez mettre un commentaire sur cette application sur le billet de mon blog prévu pour cette application. (à venir...)</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bouton de suppression (panneau) -->
+<div class="modal fade" id="remove-object" tabindex="-1" role="dialog" aria-labelledby="new" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Supprimer un object</h4>
+            </div>
+            <div class="modal-body">
+                <p>Attention ! Vous aller supprimer un object. Il sera ensuite irrécupérable.</p>
+                <p>Voulez-vous vraiment supprimer cet object ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
