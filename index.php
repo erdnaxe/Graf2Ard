@@ -1,5 +1,12 @@
-<!DOCTYPE html>
 <?php
+/*
+ * Main file (index)
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
+ */
+
 // Assets directory definition
 $assets_dir = "assets/";
 $css_dir = $assets_dir . "css/";
@@ -23,6 +30,7 @@ $osslibs = "https://oss.maxcdn.com/libs/";
 // Security for includes...
 $main_loaded = "yes";
 ?>
+<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />

@@ -1,10 +1,18 @@
-/* Couleur dans les menus de sélection */
+/*
+ * Main CSS
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
+ */
+
+/* Color in dropdown objects selector */
 span.orange	{ color: #eb7b3b; }
 span.blue	{ color: #5ab7af; }
 span.green	{ color: #c6d75e; }
 span.yellow	{ color: #fce96d; }
 
-/* Paramétre de la grille */
+/* Grid */
 .grid{
     position: relative;
     width: 100%;

@@ -1,53 +1,52 @@
 /*
- * Ce code fait partie du projet Graf2Ard
- * Il a été créé par erdnaxe.
- * Il est sous license GPL.
+ * Grid creator
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
  */
 
 /*
- * Fonctions qui édite le document (DOM) pour la grille
+ * DOM function for the grid
  */
 $(function() {
 
     /*
-     * Ajouter un objet à partir d'un menu de sélection
+     * Function to add an object with a dropdown menu.
      * @Attr name
      * @Attr color
      */
     $("a#objects-list").click(function() {
-        // Génération d'un identifiant unique
+        // Single ID per element
         var id = lastElementId;
         lastElementId++;
 
-        //DEBUG
         log("New element with id '" + id + "'.", "warning");
 
-        // Ajout de l'objet à la grille
+        // Add the object to the grid "div"
         $(".grid").append('<div class="object ' + $(this).attr("color")
                 + '" id="' + id + '">' + $(this).attr("name") + '</div>');
 
-        // Sélection de l'élément créé pour le modifier
+        // Selecting the element in newElement
         var newElement = $("#" + id);
 
-        // Ajout de l'attribut "draggable" à l'objet
+        // Adding the element to a virtual grid
         newElement.draggable({
             containment: '.grid',
             grid: [24, 24]
         });
 
-        // Permet à l'objet de s'activer
+        // On click, the element is active
         newElement.click(function() {
             if (isActive !== $(this).attr("id")) {
-                // Désactivation des autres éléments
+                // Removing class to other elements
                 $("*.object").removeClass("active");
 
-                // Changement de son état
+                // Making this element active
                 $(this).addClass("active");
-
-                // Mémorisation de l'objet actif
                 isActive = $(this).attr("id");
 
-                // Montrer les paramètres du bloc
+                // Openning the settings panel
                 showSettings(isActive);
 
                 log("Element (" + newElement.attr("id") + ") now active; disabling other elements.", "notice");

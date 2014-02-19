@@ -1,4 +1,11 @@
 <?php
+/*
+ * Arduino code generator
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
+ */
 
 // Nom de l'élément : $obj["name"]
 // Nom de l'élément en français : ".$obj["translation_fr"]

@@ -1,14 +1,12 @@
 /*
- * Ce code fait partie du projet Graf2Ard
- * Il a été créé par erdnaxe.
- * Il est sous license GPL.
+ * Keyboard shortcut
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
  */
 
-/*
- * Système de raccourcis clavier
- */
-
-// nouveau / ouvrir / enregistrer
+// new / open / save
 Mousetrap.bind('mod+n', function(e) {
     if (e.preventDefault)
         e.preventDefault();
@@ -37,7 +35,7 @@ Mousetrap.bind('mod+s', function(e) {
     $('#save').modal();
 });
 
-// exporter vers arduino
+// arduino export
 Mousetrap.bind('mod+e', function(e) {
     if (e.preventDefault)
         e.preventDefault();
@@ -48,7 +46,7 @@ Mousetrap.bind('mod+e', function(e) {
     $('#export').modal();
 });
 
-// annuel / refaire
+// undo / redo
 Mousetrap.bind('mod+z', function(e) {
     if (e.preventDefault)
         e.preventDefault();
@@ -68,7 +66,7 @@ Mousetrap.bind('mod+y', function(e) {
     redoObject();
 });
 
-// copier / couper / coller / dupliquer
+// copy / cut / paste / duplicate
 Mousetrap.bind('mod+c', function(e) {
     if (e.preventDefault)
         e.preventDefault();

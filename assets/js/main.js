@@ -1,11 +1,13 @@
 /*
- * Ce code fait partie du projet Graf2Ard
- * Il a été créé par erdnaxe.
- * Il est sous license GPL.
+ * Main javascript
+ * --------------------------
+ * This code is a part of the Graf2Ard project.
+ * He has been created by erdnaxe.
+ * This project is under GPLv2 license.
  */
 
 /*
- * Déclaration des variables
+ * Variable declaration
  */
 var debug = true;
 
@@ -13,7 +15,7 @@ var isActive = "";
 var lastElementId = 0;
 
 /*
- * Fonction DEBUG INFO
+ * Fonction for debug information
  * @param string text
  * @param string type
  */
@@ -32,12 +34,12 @@ function log(text, type) {
 }
 
 /*
- * Afficher un message d'un type (success, info, warning, danger)
+ * Show a message of one type: success, info, warning or danger
  * @param string type
  * @param string text
  * @param string title
  */
-function msg(type, text, title) {
+function msg(text, type, title) {
     $("#alert-location").append('<div class="alert alert-' + type + ' fade in">'
             + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'
             + '<h4>' + title + '</h4>'
@@ -45,7 +47,7 @@ function msg(type, text, title) {
 }
 
 /*
- * Fonction pour afficher les bons paramètres
+ * Fonction to show the settings panel
  * @arg int id
  */
 function showSettings(id) {
@@ -58,71 +60,71 @@ function showSettings(id) {
 }
 
 /*
- * Chargement des contents dans la page
+ * Content loading
  */
 $(function() {
-    // Chargements des fenêtres contextuelles
+    // Contextual windows loading
     $("#modal-content").load("app/content/modal.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Une erreur s'est produite : " + xhr.status + " " + xhr.statusText, "error");
+            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
     });
 
-    // Chargements de la barre de navigation
+    // NavBar loading
     $("#navbar-content").load("app/content/navbar.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Une erreur s'est produite : " + xhr.status + " " + xhr.statusText, "error");
+            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
     });
 
-    // Chargements de la barre de navigation
+    // Settings panel loading
     $("#settings").load("app/content/settings.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Une erreur s'est produite : " + xhr.status + " " + xhr.statusText, "error");
+            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
 
-        //Fermer le menu de paramètres grâce à la croix
+        // Function to close this panel
         $("#settings-close").click(function() {
-            // On cache les paramètres
+            // We hide settings
             $("#settings").css("visibility", "hidden");
 
-            // Désactivation de tous les éléments
+            // Then we disable the active element
             $("#" + isActive).removeClass("active");
             isActive = "";
         });
     });
 
-    // Fenêtre de log pour le DEBUG
+    // LOG windows loading
     if (debug) {
         $("#debug").load("app/content/debug.content.html", function(response, status, xhr) {
             if (status === "error")
-                alert("Une erreur s'est produite : " + xhr.status + " " + xhr.statusText, "error");
+                log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
         });
     }
 });
 
 /*
- * Fonctionnalité d'édition
- * (annuler / refaire)
- * (copier / couper / coller / dupliquer)
+ * Editing function
+ * (undo / redo)
+ * (copy / cut / paste / duplicate)
  */
 function undoObject() {
-
+    msg("Function (undoObject) not available !", "danger", "Error !");
 }
 
 function redoObject() {
-
+    msg("Function (redoObject) not available !", "danger", "Error !");
 }
 
 function copyObject() {
-
+    msg("Function (copyObject) not available !", "danger", "Error !");
 }
 
 function cutObject() {
-
+    msg("Function (cutObject) not available !", "danger", "Error !");
 }
 
 function pasteObject() {
-
+    msg("Function (pasteObject) not available !", "danger", "Error !");
 }
 
 function duplicateObject() {
-
+    msg("Function (duplicateObject) not available !", "danger", "Error !");
 }
