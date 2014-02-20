@@ -7,6 +7,24 @@
  */
 
 /*
+ * Page CSS
+ */
+body{
+    background: #fff left top repeat url("../img/grid-bg.png");
+}
+
+.navbar{
+    margin-bottom: 0 !important;
+}
+
+.jumbotron{
+    padding-top: 23px !important;
+    padding-bottom: 23px !important;
+    margin-bottom: 0 !important;
+}
+
+
+/*
  * Object selector dropdown
  */
 
@@ -27,26 +45,26 @@ span.yellow	{ color: #fce96d; }
     top: 3px;
 }
 
+
 /*
  * GRID (sortable)
  */
 #sortable { 
     width: 100%;
-    height: 144px;
 }
 #sortable > div { 
     float: left;
-    margin: 12px;
-    margin-top: 24px;
-    margin-bottom: 48px;
+
+    margin: 37px 15px 35px 9px;
+
     padding-left: 3px;
     height: 72px;
     width: 72px;
-    
+
     color: #000;
     background-color: #fff;
     background-image: url("../img/object.png");
-    
+
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     border-radius: 7px;
 }
@@ -58,8 +76,3 @@ span.yellow	{ color: #fce96d; }
 #sortable > div.blue      { background-color: #5ab7af !important; }
 #sortable > div.green     { background-color: #c6d75e !important; }
 #sortable > div.yellow    { background-color: #fce96d !important; }
-
-.grid-bg{
-    background-image: url("../img/grid-bg.png");
-    padding-left: 12px !important;
-}

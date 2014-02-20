@@ -54,24 +54,25 @@ $main_loaded = "yes";
 
         <!-- NavBar (JavaScript) --> 
         <div class="navbar navbar-default navbar-static-top" role="navigation" id="navbar-content"></div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <!-- Menu dropdown for objects -->
-                    <?php require($inc_dir . "objects-choice.include.php"); ?>
-
-                </div>
+        
+        <div class="jumbotron">
+            <div class="container">
+                
+                <!-- Menu dropdown for objects -->
+                <?php require($inc_dir . "objects-choice.include.php"); ?>
+                
             </div>
+        </div>
+        
+        <div class="container-fluid">
             <div class="row" style="margin-top:5px">
 
                 <!-- Javascript alert location -->
-                <div class="col-md-12" id="alert-location"></div>
+                <div class="col-xs-12" id="alert-location"></div>
 
             </div>
             <div class="row" style="margin-top:5px">
-                <div class="col-md-9 grid-bg">
+                <div class="col-xs-9">
 
                     <!-- Main grid -->
                     <div class="grid"><div id="sortable"></div></div>
@@ -79,7 +80,7 @@ $main_loaded = "yes";
                 </div>
 
                 <!-- Settings panel -->
-                <div class="col-md-3" id="settings" style="visibility: hidden"></div>
+                <div class="col-xs-3" id="settings" style="visibility: hidden"></div>
             </div>
             <div class="row" style="margin-top:5px">
 

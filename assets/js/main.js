@@ -9,7 +9,7 @@
 /*
  * Variable declaration
  */
-var debug = true;
+var debug = false;
 
 var isActive = "";
 var lastElementId = 0;
