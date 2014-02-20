@@ -30,7 +30,8 @@ function log(text, type) {
         text_type = "grey";
 
     if (debug)
-        $("p#debug").append(" > <span style='background-color:" + text_type + ";'>" + text + "</span><br />");
+        $("p#debug").append(" > <span style='background-color:" + text_type + ";'>"
+                + text + "</span><br />");
 }
 
 /*
@@ -47,19 +48,6 @@ function msg(text, type, title) {
 }
 
 /*
- * Fonction to show the settings panel
- * @arg int id
- */
-function showSettings(id) {
-    $("#settings").css("visibility", "visible");
-    $("#settings-title").html("L'objet n°" + id + " est sélectionné !");
-    $("#settings-body").html('<div class="panel panel-primary">'
-            + '<div class="panel-heading"><h3 class="panel-title">Le titre</h3></div>'
-            + '<div class="panel-body">Une propriété</div>'
-            + '</div>');
-}
-
-/*
  * Content loading
  */
 $(function() {
@@ -67,28 +55,19 @@ $(function() {
     $("#modal-content").load("app/content/modal.content.html", function(response, status, xhr) {
         if (status === "error")
             log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
+
+        /*
+         * Remove the object on click
+         */
+        $("button#remove-object").click(function() {
+            removeObject($(this));
+        });
     });
 
     // NavBar loading
     $("#navbar-content").load("app/content/navbar.content.html", function(response, status, xhr) {
         if (status === "error")
             log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
-    });
-
-    // Settings panel loading
-    $("#settings").load("app/content/settings.content.html", function(response, status, xhr) {
-        if (status === "error")
-            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
-
-        // Function to close this panel
-        $("#settings-close").click(function() {
-            // We hide settings
-            $("#settings").css("visibility", "hidden");
-
-            // Then we disable the active element
-            $("#" + isActive).removeClass("active");
-            isActive = "";
-        });
     });
 
     // LOG windows loading

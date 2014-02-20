@@ -96,6 +96,7 @@ $main_loaded = "yes";
         <script type="text/javascript" src="<?php echo $js_vendor_dir; ?>bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo $js_vendor_dir; ?>mousetrap.min.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>main.js"></script>
+        <script type="text/javascript" src="<?php echo $js_dir; ?>object-settings.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>grid.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>keyboard-shortcut.js"></script>
     </body>

@@ -20,7 +20,7 @@ function becomeActive(element) {
         isActive = element.attr("id");
 
         // Openning the settings panel
-        showSettings(isActive);
+        showSettings(isActive, element);
 
         log("Element (" + element.attr("id") + ") now active; disabling other elements.", "notice");
     } else {
