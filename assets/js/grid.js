@@ -44,7 +44,7 @@ $(function() {
         lastElementId++;
 
         // Add the object to the grid "div"
-        $(".grid").append('<div class="object" id="' + id + '"></div>');
+        $("#sortable").append('<div class="object" id="' + id + '"></div>');
         log("New element with id '" + id + "'.", "warning");
 
         // Selecting the element in newElement
@@ -54,11 +54,20 @@ $(function() {
         newElement.addClass($(this).attr("color")); // COLOR
         newElement.attr("name", $(this).attr("name")); // NAME
         newElement.html($(this).attr("title")); // TITLE
-        newElement.draggable({containment: '.grid', grid: [24, 24]}); // GRID
 
+        $("#sortable").sortable({
+            revert: true
+        });
+        
+        /*appedTo: '.grid',
+         axis: "x",
+         containment: '.grid', 
+         cursor: "move",
+         grid: [24, 24]*/
+        
         // Make the element active
         becomeActive(newElement);
-        
+
         // On click, the element become active
         newElement.click(function() {
             becomeActive($(this));
