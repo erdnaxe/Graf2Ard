@@ -21,8 +21,12 @@ function listJSONProperties(file) {
             var returnProperties = "";
             $.each(tableProperties["body"], function(idTable, tableTable) {
                 returnProperties += '<p>'
+                        + '<label class="control-label" for="' + tableTable["enter_in"] + '">'
                         + tableTable["name"] + ' : '
-                        + '<select name="' + tableTable["enter_in"] + '">';
+                        + '</label>'
+                        + '<select class="form-control input-sm"'
+                        + ' name="' + tableTable["enter_in"] + '"'
+                        + ' id="' + tableTable["enter_in"] + '">';
 
                 $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
                     returnProperties += '<option value="' + valeurLegalValue + '">' + valeurLegalValue + '</option>';
