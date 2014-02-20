@@ -7,25 +7,59 @@
  */
 
 /*
+ * Fonction to list properties from a JSON file
+ * @arg string JSONfile
+ */
+function listJSONProperties(file) {
+    $.getJSON(file, function(data) {
+
+        // List all propreties
+        var properties = data["properties"];
+        $.each(properties, function(idProperties, tableProperties) {
+
+            // List all configuration
+            var returnProperties = "";
+            $.each(tableProperties["body"], function(idTable, tableTable) {
+                returnProperties += '<p>'
+                        + tableTable["name"] + ' : '
+                        + '<select name="' + tableTable["enter_in"] + '">';
+
+                $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
+                    returnProperties += '<option value="' + valeurLegalValue + '">' + valeurLegalValue + '</option>';
+                });
+
+                returnProperties += '</select></p>';
+            });
+
+            // Then display them
+            $("#settings-body").append('<div class="panel panel-primary">'
+                    + '<div class="panel-heading"><h3 class="panel-title">' + tableProperties["name"] + '</h3></div>'
+                    + '<div class="panel-body">' + returnProperties + '</div>'
+                    + '</div>');
+        });
+    });
+}
+
+/*
  * Fonction to show the settings panel
  * @arg int id
  */
 function showSettings(id, element) {
+    // Cleaning
+    $("#settings-title").html('');
+    $("#settings-body").html('');
+
     // Catching the content
-    /*'<div class="panel panel-primary">'
-     + '<div class="panel-heading"><h3 class="panel-title">Le titre</h3></div>'
-     + '<div class="panel-body">Une propriété</div>'
-     + '</div>');*/
+    listJSONProperties("assets/objects/main." + element.attr("name") + ".json");
 
     // Filling the content
     $("#settings-title").html("Paramètres de " + element.html());
-    $("#settings-body").html('Paramètres de ' + element.attr("name"));
 
     // Setting the buttons
     $("button#save-object").attr("object-target", id);
     $("button#remove-object").attr("object-target", id);
 
-    // Show the settings panel (to put at the end --> DEBUG)
+    // Show the settings panel
     $("#settings").css("visibility", "visible");
 }
 

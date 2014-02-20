@@ -1,29 +1,42 @@
 {
-    "name": "test",
-	"translation_fr": "TEXT",
-	"menu": "Base",
-	"needing_librairies": null,
-	"color": "blue",
-	
-	"properties": [
-		{
-            "name": "Connection",
-			"body": [
-                { 
-                    "name": "Pin output", 
-                    "enter_in": "pin_output", 
-                    "legal_value": ["3","4"] 
+    "name": "example",
+    "translation_fr": "TEXT",
+    "menu": "Base",
+    "needing_librairies": null,
+    "color": "blue",
+    "properties": [
+        {
+            "name": "Connection 2",
+            "body": [
+                {
+                    "name": "Pin output",
+                    "enter_in": "pin_output",
+                    "legal_value": ["3", "4"]
                 },
-    		    { 
-                    "name": "Value", 
-                    "enter_in": "pin_value", 
-                    "legal_value": ["HIGH","LOW"] 
+                {
+                    "name": "Value",
+                    "enter_in": "pin_value",
+                    "legal_value": ["HIGH", "LOW"]
                 }
             ]
-		}
-	],
-	
-	"code": [
+        },
+        {
+            "name": "Connection 3",
+            "body": [
+                {
+                    "name": "Pin output",
+                    "enter_in": "pin_output",
+                    "legal_value": ["3", "4"]
+                },
+                {
+                    "name": "Value",
+                    "enter_in": "pin_value",
+                    "legal_value": ["HIGH", "LOW"]
+                }
+            ]
+        }
+    ],
+    "code": [
         {
             "function": "setup",
             "code": "pinMode($pin_output$, OUTPUT);"

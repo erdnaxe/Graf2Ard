@@ -1,29 +1,27 @@
 {
-	"name": "led",
-	"translation_fr": "LED",
-	"menu": "Base",
-	"needing_librairies": null,
-	"color": "orange",
-
-	"properties": [
-		{
+    "name": "led",
+    "translation_fr": "LED",
+    "menu": "Base",
+    "needing_librairies": null,
+    "color": "orange",
+    "properties": [
+        {
             "name": "Connection",
-			"body": [
-                { 
-                    "name": "Pin output", 
-                    "enter_in": "pin_output", 
-                    "legal_value": ["3","4"] 
+            "body": [
+                {
+                    "name": "Pin output",
+                    "enter_in": "pin_output",
+                    "legal_value": ["3", "4"]
                 },
-    		    { 
-                    "name": "Value", 
-                    "enter_in": "pin_value", 
-                    "legal_value": ["HIGH","LOW"] 
+                {
+                    "name": "Value",
+                    "enter_in": "pin_value",
+                    "legal_value": ["HIGH", "LOW"]
                 }
             ]
-		}
-	],
-	
-	"code": [
+        }
+    ],
+    "code": [
         {
             "function": "setup",
             "code": "pinMode($pin_output$, OUTPUT);"
