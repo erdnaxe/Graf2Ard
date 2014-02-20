@@ -7,6 +7,28 @@
  */
 
 /*
+ * Function to make an object active
+ * @param class element
+ */
+function becomeActive(element) {
+    if (isActive !== element.attr("id")) {
+        // Removing class to other elements
+        $("*.object").removeClass("active");
+
+        // Making this element active
+        element.addClass("active");
+        isActive = element.attr("id");
+
+        // Openning the settings panel
+        showSettings(isActive);
+
+        log("Element (" + element.attr("id") + ") now active; disabling other elements.", "notice");
+    } else {
+        log("This element (" + element.attr("id") + ") is already active !", "warning");
+    }
+}
+
+/*
  * DOM function for the grid
  */
 $(function() {
@@ -21,37 +43,25 @@ $(function() {
         var id = lastElementId;
         lastElementId++;
 
-        log("New element with id '" + id + "'.", "warning");
-
         // Add the object to the grid "div"
-        $(".grid").append('<div class="object ' + $(this).attr("color")
-                + '" id="' + id + '">' + $(this).attr("name") + '</div>');
+        $(".grid").append('<div class="object" id="' + id + '"></div>');
+        log("New element with id '" + id + "'.", "warning");
 
         // Selecting the element in newElement
         var newElement = $("#" + id);
 
-        // Adding the element to a virtual grid
-        newElement.draggable({
-            containment: '.grid',
-            grid: [24, 24]
-        });
+        // Adding attributs to the new element
+        newElement.addClass($(this).attr("color")); // COLOR
+        newElement.attr("name", $(this).attr("name")); // NAME
+        newElement.html($(this).attr("title")); // TITLE
+        newElement.draggable({containment: '.grid', grid: [24, 24]}); // GRID
 
-        // On click, the element is active
+        // Make the element active
+        becomeActive(newElement);
+        
+        // On click, the element become active
         newElement.click(function() {
-            if (isActive !== $(this).attr("id")) {
-                // Removing class to other elements
-                $("*.object").removeClass("active");
-
-                // Making this element active
-                $(this).addClass("active");
-                isActive = $(this).attr("id");
-
-                // Openning the settings panel
-                showSettings(isActive);
-
-                log("Element (" + newElement.attr("id") + ") now active; disabling other elements.", "notice");
-            } else
-                log("This element (" + newElement.attr("id") + ") is already active !", "warning");
+            becomeActive($(this));
         });
     });
 

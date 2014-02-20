@@ -64,12 +64,12 @@ foreach ($menu as $name => $object) {
                         . '" title="' . $array_data["text-fr"] 
                         . '" color="' . $array_data["color"] . '">';
                 echo '<span class="glyphicon glyphicon-stop ' . $array_data["color"] 
-                        . '"> </span> ' . $array_data["text"];
+                        . '"> </span> ' . $array_data["text-fr"];
                 echo '</a>';
                 echo '</li>';
             }
-            ?>    
+            ?>
         </ul>
     </div>
     <?php
-}    
+}
