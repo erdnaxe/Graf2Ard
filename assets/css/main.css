@@ -32,12 +32,13 @@ span.yellow	{ color: #fce96d; }
  */
 #sortable { 
     width: 100%;
-    height: 50px;
-    padding: 0.5em;
+    height: 144px;
 }
 #sortable > div { 
     float: left;
     margin: 12px;
+    margin-top: 24px;
+    margin-bottom: 48px;
     padding-left: 3px;
     height: 72px;
     width: 72px;
@@ -50,10 +51,15 @@ span.yellow	{ color: #fce96d; }
     border-radius: 7px;
 }
 #sortable > div.active{
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 1px 1px 8px rgba(102, 175, 233, 1);
 }
 /* Objects color */
 #sortable > div.orange    { background-color: #eb7b3b !important; }
 #sortable > div.blue      { background-color: #5ab7af !important; }
 #sortable > div.green     { background-color: #c6d75e !important; }
 #sortable > div.yellow    { background-color: #fce96d !important; }
+
+.grid-bg{
+    background-image: url("../img/grid-bg.png");
+    padding-left: 12px !important;
+}

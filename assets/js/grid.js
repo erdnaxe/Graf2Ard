@@ -34,6 +34,19 @@ function becomeActive(element) {
 $(function() {
 
     /*
+     * Creating the grid
+     */
+    $("#sortable").sortable({
+        axis: false,
+        containment: ".grid",
+        cursor: "move",
+        forceHelperSize: true,
+        grid: [24, 24],
+        scroll: false,
+        revert: true
+    });
+
+    /*
      * Function to add an object with a dropdown menu.
      * @Attr name
      * @Attr color
@@ -55,16 +68,9 @@ $(function() {
         newElement.attr("name", $(this).attr("name")); // NAME
         newElement.html($(this).attr("title")); // TITLE
 
-        $("#sortable").sortable({
-            revert: true
-        });
-        
-        /*appedTo: '.grid',
-         axis: "x",
-         containment: '.grid', 
-         cursor: "move",
-         grid: [24, 24]*/
-        
+        // Add the element to the grid by a refresh
+        $("#sortable").sortable("refresh");
+
         // Make the element active
         becomeActive(newElement);
 
@@ -75,3 +81,12 @@ $(function() {
     });
 
 });
+
+/*
+ * Function to save the grid into JSON
+ */
+function saveGrid() {
+    $("#sortable").sortable("refreshPositions");
+    var sorted = $("#sortable").sortable("serialize", {key: "sort"});
+    // var sortedIDs = $( ".selector" ).sortable( "toArray" );
+}

@@ -78,6 +78,19 @@ function saveObject(element) {
  * Function to remove an object
  */
 function removeObject(element) {
+    // Catch the ID
+    var id = element.attr("object-target");
+
+    // Remove the real object
+    $("#" + id).remove();
+
+    // Remove the settings panel
+    $("#settings").css("visibility", "hidden");
+    isActive = "";
+
+    // Remove the element to the grid by a refresh
+    $("#sortable").sortable("refresh");
+
     msg("Votre block (" + element.attr("object-target") + ") a bien été supprim&eacute;. ", "danger", "Suppression effectu&eacute;e !");
 }
 

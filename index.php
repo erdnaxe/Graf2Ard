@@ -71,7 +71,7 @@ $main_loaded = "yes";
 
             </div>
             <div class="row" style="margin-top:5px">
-                <div class="col-md-9">
+                <div class="col-md-9 grid-bg">
 
                     <!-- Main grid -->
                     <div class="grid"><div id="sortable"></div></div>
