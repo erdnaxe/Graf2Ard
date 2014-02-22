@@ -41,8 +41,43 @@ function newGrid() {
 
     // Refresh the grid
     $("#sortable").sortable("refresh");
+}
 
-    msg("New grid open. Old grid DESTROY !", "danger", "Nouveau fichier");
+/*
+ * Function to open the grid as JSON
+ */
+function openGrid(fileContent) {
+    // Remove the old grid
+    newGrid();
+    
+    alert(fileContent);
+    
+    // Sort objects
+    /*var ArrayOutput = new Array();
+    for (i = 0; i < sorted.length; i++) {
+        var realId = sorted[i];
+        ArrayOutput[i] = $("#" + realId).attr("name");
+    }*/
+}
+
+/*
+ * Function to save the grid into JSON
+ */
+function saveGrid() {
+    // Catch all elements on the grid
+    $("#sortable").sortable("refreshPositions");
+    var sorted = $("#sortable").sortable("toArray");
+
+    // Sort objects
+    var ArrayOutput = new Array();
+    for (i = 0; i < sorted.length; i++) {
+        var realId = sorted[i];
+        ArrayOutput[i] = $("#" + realId).attr("name");
+    }
+
+    // Open a download box to save the file
+    var blob = new Blob([JSON.stringify(ArrayOutput)], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "NewProject.json");
 }
 
 /*
@@ -98,23 +133,3 @@ $(function() {
     });
 
 });
-
-/*
- * Function to save the grid into JSON
- */
-function saveGrid() {
-    // Catch all elements on the grid
-    $("#sortable").sortable("refreshPositions");
-    var sorted = $("#sortable").sortable("toArray");
-
-    // Sort objects
-    var ArrayOutput = new Array();
-    for (i = 0; i < sorted.length; i++) {
-        var realId = sorted[i];
-        ArrayOutput[i] = $("#" + realId).attr("name");
-    }
-
-    // Open a download box to save the file
-    var blob = new Blob([JSON.stringify(ArrayOutput)], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "NewProject.json");
-}

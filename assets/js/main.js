@@ -69,6 +69,19 @@ $(function() {
         $('button#newFileButton').click(function() {
             newGrid();
         });
+
+        /*
+         * Upload a file
+         */
+        $('#fileToUpload').change(function() {
+            var file = $('#fileToUpload').get(0).files[0];
+            var read = new FileReader();
+            read.readAsBinaryString(file);
+            read.onloadend = function() {
+                openGrid(read.result);
+            };
+            $('#open').modal('hide')
+        });
     });
 
     // NavBar loading
