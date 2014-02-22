@@ -11,6 +11,8 @@
  */
 body{
     background: #fff left top repeat url("../img/grid-bg.png");
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .navbar{
@@ -18,8 +20,8 @@ body{
 }
 
 .jumbotron{
-    padding-top: 23px !important;
-    padding-bottom: 23px !important;
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
     margin-bottom: 0 !important;
 }
 

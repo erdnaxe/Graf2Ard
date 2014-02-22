@@ -62,6 +62,13 @@ $(function() {
         $("button#remove-object").click(function() {
             removeObject($(this));
         });
+        
+        /*
+         * Make a new project on click
+         */
+        $('button#newFileButton').click(function() {
+            newGrid();
+        });
     });
 
     // NavBar loading

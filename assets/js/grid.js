@@ -29,6 +29,23 @@ function becomeActive(element) {
 }
 
 /*
+ * Function to make a new grid
+ */
+function newGrid() {
+    // Remove the settings panel
+    $("#settings").css("visibility", "hidden");
+    isActive = "";
+
+    // DESTROY all elements
+    $("#sortable").html('');
+
+    // Refresh the grid
+    $("#sortable").sortable("refresh");
+
+    msg("New grid open. Old grid DESTROY !", "danger", "Nouveau fichier");
+}
+
+/*
  * DOM function for the grid
  */
 $(function() {
@@ -38,10 +55,10 @@ $(function() {
      */
     $("#sortable").sortable({
         axis: false,
-        containment: ".grid",
+        /*containment: ".grid",*/
         cursor: "move",
         forceHelperSize: true,
-        grid: [24, 24],
+        /* grid: [24, 24], */
         scroll: false,
         revert: true
     });

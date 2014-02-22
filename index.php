@@ -36,7 +36,7 @@ $main_loaded = "yes";
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <title>Graf2Ard - erdnaxe</title>
+        <title>Graf2Ard - Nouveau fichier</title>
     </head>
     <body>
         <!-- Modal (contextual windows) (JavaScript) --> 
