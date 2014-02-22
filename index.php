@@ -9,23 +9,13 @@
 
 // Assets directory definition
 $assets_dir = "assets/";
-$css_dir = $assets_dir . "css/";
 $js_dir = $assets_dir . "js/";
 $img_dir = $assets_dir . "img/";
 $objects_dir = $assets_dir . "objects/";
 
-// Vendor directory definition (all librairies)
-$vendor_dir = "vendor/";
-$css_vendor_dir = $vendor_dir . "css/";
-$js_vendor_dir = $vendor_dir . "js/";
-
 // App directory definition
 $app_dir = "app/";
 $inc_dir = $app_dir . "include/";
-
-// Internet librairies
-$glibs = "https://ajax.googleapis.com/ajax/libs/";
-$osslibs = "https://oss.maxcdn.com/libs/";
 
 // Security for includes...
 $main_loaded = "yes";
@@ -37,13 +27,13 @@ $main_loaded = "yes";
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Un générateur de code Arduino à partir de grafcet." />
         <meta name="author" content="erdnaxe" />
-        <link href="<?php echo $css_vendor_dir; ?>bootstrap.min.css" rel='stylesheet' type='text/css' />
-        <link href="<?php echo $css_dir; ?>main.css" rel='stylesheet' type='text/css' />
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="assets/css/main.css" rel='stylesheet' type='text/css' />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-        <script src="<?php echo $osslibs; ?>html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="<?php echo $osslibs; ?>respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
         <title>Graf2Ard - erdnaxe</title>
@@ -91,11 +81,11 @@ $main_loaded = "yes";
         </div>
 
         <!-- Javascript inclusion -->
-        <script type="text/javascript" src="<?php echo $glibs; ?>jquery/1.11.0/jquery.min.js"></script>
-        <script type="text/javascript" src="<?php echo $glibs; ?>jqueryui/1.10.4/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="<?php echo $js_vendor_dir; ?>jquery.ui.touch-punch.min.js"></script>
-        <script type="text/javascript" src="<?php echo $js_vendor_dir; ?>bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?php echo $js_vendor_dir; ?>mousetrap.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="vendor/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendor/mousetrap/mousetrap.min.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>main.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>object-settings.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>grid.js"></script>

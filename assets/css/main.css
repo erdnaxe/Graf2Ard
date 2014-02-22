@@ -23,6 +23,10 @@ body{
     margin-bottom: 0 !important;
 }
 
+.alert{
+    margin-bottom: 16px;
+    padding-bottom: 15px;
+}
 
 /*
  * Object selector dropdown
