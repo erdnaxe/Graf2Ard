@@ -19,13 +19,12 @@ There are tree colors : orange, blue and yellow.
 * Folder listing disabled on the server (for crazy man...).
 
 ## Requirements for the client ##
-* Internet connection because of the two JQuery librairies host on Google.
 * Javascript support with a recent browser (IE 8+, chrome, firefox...).
 
 ## List of the librairies used ##
 * First of all : [JQuery](http://jquery.com/) and [JQuery UI](http://jqueryui.com/).
-* [Twitter Bootstrap](http://getbootstrap.com/) (CSS and Javascript addons).
 * [JQuery UI touch punch](http://touchpunch.furf.com/) for touchscreen support.
+* [Twitter Bootstrap](http://getbootstrap.com/) (CSS and Javascript addons).
 * [MouseTrap](http://craig.is/killing/mice) MouseTrap to cach keyboard shortcut.
 
 ## Directory system ##
