@@ -86,6 +86,7 @@ $main_loaded = "yes";
         <script type="text/javascript" src="vendor/jquery-ui/jquery.ui.touch-punch.min.js"></script>
         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="vendor/mousetrap/mousetrap.min.js"></script>
+        <script type="text/javascript" src="vendor/filesaver/FileSaver.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>main.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>object-settings.js"></script>
         <script type="text/javascript" src="<?php echo $js_dir; ?>grid.js"></script>

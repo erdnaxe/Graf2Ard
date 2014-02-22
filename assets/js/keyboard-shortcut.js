@@ -32,7 +32,7 @@ Mousetrap.bind('mod+s', function(e) {
         e.returnValue = false; // internet explorer
     
     log("Keyboard shortcut (mod + s) invoqued !", "notice");
-    $('#save').modal();
+    saveGrid();
 });
 
 // arduino export

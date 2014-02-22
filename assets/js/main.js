@@ -62,7 +62,7 @@ $(function() {
         $("button#remove-object").click(function() {
             removeObject($(this));
         });
-        
+
         /*
          * Make a new project on click
          */
@@ -75,6 +75,13 @@ $(function() {
     $("#navbar-content").load("app/content/navbar.content.html", function(response, status, xhr) {
         if (status === "error")
             log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
+
+        /*
+         * Save object on click
+         */
+        $('a#saveGrid').click(function() {
+            saveGrid();
+        });
     });
 
     // LOG windows loading

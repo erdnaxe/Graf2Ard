@@ -11,8 +11,12 @@
  */
 body{
     background: #fff left top repeat url("../img/grid-bg.png");
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     overflow-x: hidden;
+}
+
+.modal{
+    overflow-y: hidden !important;
 }
 
 .navbar{
