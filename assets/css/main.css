@@ -15,34 +15,44 @@ body{
     overflow-x: hidden;
 }
 
-.modal{
-    overflow-y: hidden !important;
-}
+.modal{ overflow-y: hidden !important; }
 
-.navbar{
-    margin-bottom: 0 !important;
-}
 
-.jumbotron{
-    padding-top: 11px !important;
-    padding-bottom: 11px !important;
-    margin-bottom: 0 !important;
+/*
+ * Alert align with grid
+ */
+.alert-container{
+    margin-top: 24px;
+    min-height: 24px;
 }
 
 .alert{
-    margin-bottom: 16px;
-    padding-bottom: 15px;
+    margin: 0 2px 24px 9px;
+    padding: 13px 14px;
+    max-height: 48px;
 }
 
-/*
- * Object selector dropdown
- */
 
-/* Color in dropdown objects selector */
-span.orange	{ color: #eb7b3b; }
-span.blue	{ color: #5ab7af; }
-span.green	{ color: #c6d75e; }
-span.yellow	{ color: #fce96d; }
+/*
+ * NavBar
+ */
+.navbar{
+    margin-bottom: 0 !important;
+    min-height: 48px !important;
+    height: 48px;
+    border: 0 !important;
+}
+
+.navbar-nav > li > a{
+    padding-bottom: 13px;
+}
+
+.jumbotron{
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    height: 48px !important;
+    margin-bottom: 0 !important;
+}
 
 /* Hotkey in dropdown */
 .dropdown-menu > li > a {
@@ -57,6 +67,17 @@ span.yellow	{ color: #fce96d; }
 
 
 /*
+ * Object selector dropdown
+ */
+
+/* Color in dropdown objects selector */
+span.orange	{ color: #eb7b3b; }
+span.blue	{ color: #5ab7af; }
+span.green	{ color: #c6d75e; }
+span.yellow	{ color: #fce96d; }
+
+
+/*
  * GRID (sortable)
  */
 #sortable { 
@@ -65,7 +86,7 @@ span.yellow	{ color: #fce96d; }
 #sortable > div { 
     float: left;
 
-    margin: 37px 15px 35px 9px;
+    margin: 48px 15px 48px 9px;
 
     padding-left: 3px;
     height: 72px;
@@ -81,6 +102,7 @@ span.yellow	{ color: #fce96d; }
 #sortable > div.active{
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 1px 1px 8px rgba(102, 175, 233, 1);
 }
+
 /* Objects color */
 #sortable > div.orange    { background-color: #eb7b3b !important; }
 #sortable > div.blue      { background-color: #5ab7af !important; }

@@ -71,7 +71,7 @@ function showSettings(id, element) {
  * Function to save an object
  */
 function saveObject(element) {
-    msg("Votre block (" + element.attr("object-target") + ") a bien été sauvegard&eacute;. ", "success", "Sauvegarde effectu&eacute;e !");
+    msg("Votre block (" + element.attr("object-target") + ") a bien été sauvegard&eacute;. ", "success");
 }
 
 /*
@@ -91,7 +91,7 @@ function removeObject(element) {
     // Remove the element to the grid by a refresh
     $("#sortable").sortable("refresh");
 
-    msg("Votre block (" + element.attr("object-target") + ") a bien été supprim&eacute;. ", "danger", "Suppression effectu&eacute;e !");
+    msg("Votre block (" + element.attr("object-target") + ") a bien été supprim&eacute;. ", "info");
 }
 
 /*
@@ -102,7 +102,7 @@ $(function() {
     // Settings panel loading
     $("#settings").load("app/content/settings.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
+            msg("Un problème a été rencontré : " + xhr.status + " " + xhr.statusText, "danger");
 
         // Function to close this panel
         $("#settings-close").click(function() {

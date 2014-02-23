@@ -55,13 +55,13 @@ $main_loaded = "yes";
         </div>
         
         <div class="container-fluid">
-            <div class="row" style="margin-top:5px">
+            <div class="row alert-container">
 
                 <!-- Javascript alert location -->
                 <div class="col-xs-12" id="alert-location"></div>
 
             </div>
-            <div class="row" style="margin-top:5px">
+            <div class="row">
                 <div class="col-xs-9">
 
                     <!-- Main grid -->
@@ -71,12 +71,6 @@ $main_loaded = "yes";
 
                 <!-- Settings panel -->
                 <div class="col-xs-3" id="settings" style="visibility: hidden"></div>
-            </div>
-            <div class="row" style="margin-top:5px">
-
-                <!-- To DEBUG -->
-                <div class="col-md-8" id="debug"></div>
-
             </div>
         </div>
 

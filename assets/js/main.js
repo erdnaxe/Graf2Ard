@@ -9,30 +9,8 @@
 /*
  * Variable declaration
  */
-var debug = false;
-
 var isActive = "";
 var lastElementId = 0;
-
-/*
- * Fonction for debug information
- * @param string text
- * @param string type
- */
-function log(text, type) {
-    var text_type = "";
-
-    if (type === "error")
-        text_type = "red";
-    if (type === "warning")
-        text_type = "yellow";
-    if (type === "notice")
-        text_type = "grey";
-
-    if (debug)
-        $("p#debug").append(" > <span style='background-color:" + text_type + ";'>"
-                + text + "</span><br />");
-}
 
 /*
  * Show a message of one type: success, info, warning or danger
@@ -40,10 +18,9 @@ function log(text, type) {
  * @param string text
  * @param string title
  */
-function msg(text, type, title) {
+function msg(text, type) {
     $("#alert-location").append('<div class="alert alert-' + type + ' fade in">'
             + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'
-            + '<h4>' + title + '</h4>'
             + '<p>' + text + '</p></div>');
 }
 
@@ -54,7 +31,7 @@ $(function() {
     // Contextual windows loading
     $("#modal-content").load("app/content/modal.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
+            msg("Un problème a été rencontré : " + xhr.status + " " + xhr.statusText, "danger");
 
         /*
          * Remove the object on click
@@ -80,14 +57,14 @@ $(function() {
             read.onloadend = function() {
                 openGrid(read.result);
             };
-            $('#open').modal('hide')
+            $('#open').modal('hide');
         });
     });
 
     // NavBar loading
     $("#navbar-content").load("app/content/navbar.content.html", function(response, status, xhr) {
         if (status === "error")
-            log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
+            msg("Un problème a été rencontré : " + xhr.status + " " + xhr.statusText, "danger");
 
         /*
          * Save object on click
@@ -96,14 +73,6 @@ $(function() {
             saveGrid();
         });
     });
-
-    // LOG windows loading
-    if (debug) {
-        $("#debug").load("app/content/debug.content.html", function(response, status, xhr) {
-            if (status === "error")
-                log("Something goes wrong : " + xhr.status + " " + xhr.statusText, "error");
-        });
-    }
 });
 
 /*
@@ -112,25 +81,25 @@ $(function() {
  * (copy / cut / paste / duplicate)
  */
 function undoObject() {
-    msg("Function (undoObject) not available !", "danger", "Error !");
+    msg("L'action (undoObject) n'est pas disponible !", "danger");
 }
 
 function redoObject() {
-    msg("Function (redoObject) not available !", "danger", "Error !");
+    msg("L'action (redoObject) n'est pas disponible !", "danger");
 }
 
 function copyObject() {
-    msg("Function (copyObject) not available !", "danger", "Error !");
+    msg("L'action (copyObject) n'est pas disponible !", "danger");
 }
 
 function cutObject() {
-    msg("Function (cutObject) not available !", "danger", "Error !");
+    msg("L'action (cutObject) n'est pas disponible !", "danger");
 }
 
 function pasteObject() {
-    msg("Function (pasteObject) not available !", "danger", "Error !");
+    msg("L'action (pasteObject) n'est pas disponible !", "danger");
 }
 
 function duplicateObject() {
-    msg("Function (duplicateObject) not available !", "danger", "Error !");
+    msg("L'action (duplicateObject) n'est pas disponible !", "danger");
 }

@@ -21,10 +21,6 @@ function becomeActive(element) {
 
         // Openning the settings panel
         showSettings(isActive, element);
-
-        log("Element (" + element.attr("id") + ") now active; disabling other elements.", "notice");
-    } else {
-        log("This element (" + element.attr("id") + ") is already active !", "warning");
     }
 }
 
@@ -49,15 +45,15 @@ function newGrid() {
 function openGrid(fileContent) {
     // Remove the old grid
     newGrid();
-    
+
     alert(fileContent);
-    
+
     // Sort objects
     /*var ArrayOutput = new Array();
-    for (i = 0; i < sorted.length; i++) {
-        var realId = sorted[i];
-        ArrayOutput[i] = $("#" + realId).attr("name");
-    }*/
+     for (i = 0; i < sorted.length; i++) {
+     var realId = sorted[i];
+     ArrayOutput[i] = $("#" + realId).attr("name");
+     }*/
 }
 
 /*
@@ -78,6 +74,9 @@ function saveGrid() {
     // Open a download box to save the file
     var blob = new Blob([JSON.stringify(ArrayOutput)], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "NewProject.json");
+
+    // Show the message
+    msg("Fichier enregistré !", "success");
 }
 
 /*
@@ -90,7 +89,6 @@ $(function() {
      */
     $("#sortable").sortable({
         axis: false,
-        /*containment: ".grid",*/
         cursor: "move",
         forceHelperSize: true,
         /* grid: [24, 24], */
@@ -110,7 +108,6 @@ $(function() {
 
         // Add the object to the grid "div"
         $("#sortable").append('<div class="object" id="' + id + '"></div>');
-        log("New element with id '" + id + "'.", "warning");
 
         // Selecting the element in newElement
         var newElement = $("#" + id);
