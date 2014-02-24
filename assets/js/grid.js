@@ -96,39 +96,46 @@ $(function() {
         revert: true
     });
 
-    /*
-     * Function to add an object with a dropdown menu.
-     * @Attr name
-     * @Attr color
-     */
-    $("a#objects-list").click(function() {
-        var id = lastElementId;
+    // Objects dropdowns loading
+    $(".jumbotron").load("app/content/objects-choice.content.php", function(response, status, xhr) {
+        if (status === "error")
+            msg("Un problème a été rencontré : " + xhr.status + " " + xhr.statusText, "danger");
 
-        // Single ID per element
-        lastElementId++;
+        /*
+         * Function to add an object with a dropdown menu.
+         * @Attr name
+         * @Attr color
+         */
+        $("a#objects-list").click(function() {
+            var id = lastElementId;
 
-        // Add the object to the grid "div"
-        $("#sortable").append('<div class="object" id="' + id + '"></div>');
+            // Single ID per element
+            lastElementId++;
 
-        // Selecting the element in newElement
-        var newElement = $("#" + id);
+            // Add the object to the grid "div"
+            $("#sortable").append('<div class="object" id="' + id + '"></div>');
 
-        // Adding attributs to the new element
-        newElement.addClass($(this).attr("color")); // COLOR
-        newElement.attr("name", $(this).attr("name")); // NAME
-        newElement.html($(this).attr("title")); // TITLE
+            // Selecting the element in newElement
+            var newElement = $("#" + id);
 
-        // Add the element to the grid by a refresh
-        $("#sortable").sortable("refresh");
+            // Adding attributs to the new element
+            newElement.addClass($(this).attr("color")); // COLOR
+            newElement.attr("name", $(this).attr("name")); // NAME
+            newElement.html($(this).attr("title")); // TITLE
 
-        // Make the element active
-        becomeActive(newElement);
+            // Add the element to the grid by a refresh
+            $("#sortable").sortable("refresh");
 
-        // On click, the element become active
-        newElement.click(function() {
-            becomeActive($(this));
+            // Make the element active
+            becomeActive(newElement);
+
+            // On click, the element become active
+            newElement.click(function() {
+                becomeActive($(this));
+            });
+
         });
-
+        
     });
 
 });

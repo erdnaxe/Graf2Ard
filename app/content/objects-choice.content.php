@@ -1,9 +1,4 @@
 <?php
-if (!isset($main_loaded)) {
-    header('Location: /');
-    exit;
-}
-
 /*
  * Objects selector
  * --------------------------
@@ -13,7 +8,7 @@ if (!isset($main_loaded)) {
  */
 
 // Assets directory definition
-$assets_dir = "assets/";
+$assets_dir = "../../assets/";
 $objects_dir = $assets_dir . "objects/";
 
 // Creating the main arrays
@@ -53,6 +48,9 @@ foreach ($list_file as $id => $file) {
         "color" => $obj["color"]);
 }
 
+// Just open the container
+echo '<div class="container">';
+
 // Now it's time to draw dropdowns
 foreach ($menu as $name => $object) {
     ?>
@@ -77,3 +75,5 @@ foreach ($menu as $name => $object) {
     </div>
     <?php
 }
+
+echo "</div>";
