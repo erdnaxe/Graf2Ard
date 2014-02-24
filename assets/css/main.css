@@ -17,6 +17,13 @@ body{
 
 .modal{ overflow-y: hidden !important; }
 
+.fork-banner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    z-index: 1001;
+}
 
 /*
  * Alert align with grid

@@ -102,8 +102,9 @@ $(function() {
      * @Attr color
      */
     $("a#objects-list").click(function() {
-        // Single ID per element
         var id = lastElementId;
+
+        // Single ID per element
         lastElementId++;
 
         // Add the object to the grid "div"
@@ -127,6 +128,7 @@ $(function() {
         newElement.click(function() {
             becomeActive($(this));
         });
+
     });
 
 });

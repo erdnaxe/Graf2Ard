@@ -12,6 +12,10 @@ if (!isset($main_loaded)) {
  * This project is under GPLv2 license.
  */
 
+// Assets directory definition
+$assets_dir = "assets/";
+$objects_dir = $assets_dir . "objects/";
+
 // Creating the main arrays
 $list_file = array();
 $menu = array();

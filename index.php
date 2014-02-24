@@ -7,16 +7,6 @@
  * This project is under GPLv2 license.
  */
 
-// Assets directory definition
-$assets_dir = "assets/";
-$js_dir = $assets_dir . "js/";
-$img_dir = $assets_dir . "img/";
-$objects_dir = $assets_dir . "objects/";
-
-// App directory definition
-$app_dir = "app/";
-$inc_dir = $app_dir . "include/";
-
 // Security for includes...
 $main_loaded = "yes";
 ?>
@@ -44,16 +34,22 @@ $main_loaded = "yes";
 
         <!-- NavBar (JavaScript) --> 
         <div class="navbar navbar-default navbar-static-top" role="navigation" id="navbar-content"></div>
+
+        <a href="https://github.com/erdnaxe/Graf2Ard" target="about:blank">
+            <img class="fork-banner"
+                 src="https://github-camo.global.ssl.fastly.net/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" 
+                 alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+        </a>
         
         <div class="jumbotron">
             <div class="container">
-                
+
                 <!-- Menu dropdown for objects -->
-                <?php require($inc_dir . "objects-choice.include.php"); ?>
-                
+                <?php require("app/include/objects-choice.include.php"); ?>
+
             </div>
         </div>
-        
+
         <div class="container-fluid">
             <div class="row alert-container">
 
@@ -74,16 +70,24 @@ $main_loaded = "yes";
             </div>
         </div>
 
-        <!-- Javascript inclusion -->
+        <!-- JQuery / UI -->
         <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="vendor/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="vendor/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+
+        <!-- Bootstrap -->
         <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="vendor/mousetrap/mousetrap.min.js"></script>
+
+        <!-- Librairy to open download box -->
         <script type="text/javascript" src="vendor/filesaver/FileSaver.js"></script>
-        <script type="text/javascript" src="<?php echo $js_dir; ?>main.js"></script>
-        <script type="text/javascript" src="<?php echo $js_dir; ?>object-settings.js"></script>
-        <script type="text/javascript" src="<?php echo $js_dir; ?>grid.js"></script>
-        <script type="text/javascript" src="<?php echo $js_dir; ?>keyboard-shortcut.js"></script>
+
+        <!-- My javascript -->
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script type="text/javascript" src="assets/js/object-settings.js"></script>
+        <script type="text/javascript" src="assets/js/grid.js"></script>
+
+        <!-- Keyboard support -->
+        <script type="text/javascript" src="vendor/mousetrap/mousetrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/keyboard-shortcut.js"></script>
     </body>
 </html>

@@ -80,14 +80,6 @@ $(function() {
  * (undo / redo)
  * (copy / cut / paste / duplicate)
  */
-function undoObject() {
-    msg("L'action (undoObject) n'est pas disponible !", "danger");
-}
-
-function redoObject() {
-    msg("L'action (redoObject) n'est pas disponible !", "danger");
-}
-
 function copyObject() {
     msg("L'action (copyObject) n'est pas disponible !", "danger");
 }
