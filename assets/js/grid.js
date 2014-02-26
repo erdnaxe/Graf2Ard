@@ -25,6 +25,39 @@ function becomeActive(element) {
 }
 
 /*
+ * Function to create a new object
+ */
+function newObject(name, translation_fr, color) {
+    var id = lastElementId;
+
+    // Single ID per element
+    lastElementId++;
+
+    // Add the object to the grid "div"
+    $("#sortable").append('<div class="object" id="' + id + '"></div>');
+
+    // Selecting the element in newElement
+    var newElement = $("#" + id);
+
+    // Adding attributs to the new element
+    newElement.addClass(color); // COLOR
+    newElement.attr("name", translation_fr); // TRANSLATION
+    newElement.html(name); // NAME
+
+    // Add the element to the grid by a refresh
+    $("#sortable").sortable("refresh");
+
+    // Make the element active
+    becomeActive(newElement);
+
+    // On click, the element become active
+    newElement.click(function() {
+        becomeActive($(this));
+    });
+}
+
+
+/*
  * Function to make a new grid
  */
 function newGrid() {
@@ -80,13 +113,9 @@ function saveGrid() {
 }
 
 /*
- * DOM function for the grid
+ * Creating the grid
  */
 $(function() {
-
-    /*
-     * Creating the grid
-     */
     $("#sortable").sortable({
         axis: false,
         cursor: "move",
@@ -95,47 +124,4 @@ $(function() {
         scroll: false,
         revert: true
     });
-
-    // Objects dropdowns loading
-    $(".jumbotron").load("app/content/objects-choice.content.php", function(response, status, xhr) {
-        if (status === "error")
-            msg("Un problème a été rencontré : " + xhr.status + " " + xhr.statusText, "danger");
-
-        /*
-         * Function to add an object with a dropdown menu.
-         * @Attr name
-         * @Attr color
-         */
-        $("a#objects-list").click(function() {
-            var id = lastElementId;
-
-            // Single ID per element
-            lastElementId++;
-
-            // Add the object to the grid "div"
-            $("#sortable").append('<div class="object" id="' + id + '"></div>');
-
-            // Selecting the element in newElement
-            var newElement = $("#" + id);
-
-            // Adding attributs to the new element
-            newElement.addClass($(this).attr("color")); // COLOR
-            newElement.attr("name", $(this).attr("name")); // NAME
-            newElement.html($(this).attr("title")); // TITLE
-
-            // Add the element to the grid by a refresh
-            $("#sortable").sortable("refresh");
-
-            // Make the element active
-            becomeActive(newElement);
-
-            // On click, the element become active
-            newElement.click(function() {
-                becomeActive($(this));
-            });
-
-        });
-        
-    });
-
 });

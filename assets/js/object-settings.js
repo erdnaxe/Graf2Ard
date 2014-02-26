@@ -54,7 +54,7 @@ function showSettings(id, element) {
     $("#settings-body").html('');
 
     // Catching the content
-    listJSONProperties("assets/objects/main." + element.attr("name") + ".json");
+    listJSONProperties("assets/objects/" + element.attr("name") + ".json");
 
     // Filling the content
     $("#settings-title").html("Paramètres de " + element.html());
