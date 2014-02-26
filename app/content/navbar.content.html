@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -7,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Grafcet <b>2</b> Arduino</a>
+        <a class="navbar-brand" href="/">Grafcet Arduino editor</a>
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -15,27 +14,15 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fichier <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <!-- Bouton gestion fichier -->
-                    <li><a href="#" data-toggle="modal" data-target="#new">
-                            Nouveau
-                            <span class="text-muted kbd">Ctrl + N</span>
-                        </a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#open">
-                            Ouvrir un fichier Grafcet
-                            <span class="text-muted kbd">Ctrl + O</span>
-                        </a></li>
-                    <li><a href="#" id="saveGrid">
-                            Enregistrer le Grafcet
-                            <span class="text-muted kbd">Ctrl + S</span>
-                        </a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#new">Nouveau<span class="text-muted kbd">Ctrl + N</span></a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#open">Ouvrir un fichier Grafcet<span class="text-muted kbd">Ctrl + O</span></a></li>
+                    <li><a href="#" id="saveGrid">Enregistrer le Grafcet<span class="text-muted kbd">Ctrl + S</span></a></li>
                     <li class="divider"></li>
 
                     <!-- Boutons importation / exportation -->
                     <li class="dropdown-header">Importation / Exportation</li>
                     <li><a href="#" data-toggle="modal" data-target="#import">Importer un fichier Arduino</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#export">
-                            Exporter vers Arduino
-                            <span class="text-muted kbd">Ctrl + E</span>
-                        </a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#export">Exporter vers Arduino<span class="text-muted kbd">Ctrl + E</span></a></li>
                     <li class="divider"></li>
                     <li><a href="/">Quitter vers le blog</a></li>
                 </ul>
@@ -44,40 +31,22 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edition <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <!-- Undo / Redo -->
-                    <li><a href="#">
-                            Annuler
-                            <span class="text-muted kbd">Ctrl + Z</span>
-                        </a></li>
-                    <li><a href="#">
-                            Refaire
-                            <span class="text-muted kbd">Ctrl + Y</span>
-                        </a></li>
+                    <li><a href="#">Annuler<span class="text-muted kbd">Ctrl + Z</span></a></li>
+                    <li><a href="#">Refaire<span class="text-muted kbd">Ctrl + Y</span></a></li>
                     <li class="divider"></li>
 
                     <!-- Edition -->
-                    <li><a href="#">
-                            Copier
-                            <span class="text-muted kbd">Ctrl + C</span>
-                        </a></li>
-                    <li><a href="#">
-                            Couper
-                            <span class="text-muted kbd">Ctrl + X</span>
-                        </a></li>
-                    <li><a href="#">
-                            Coller
-                            <span class="text-muted kbd">Ctrl + V</span>
-                        </a></li>
-                    <li><a href="#">
-                            Dupliquer
-                            <span class="text-muted kbd">Ctrl + D</span>
-                        </a></li>
+                    <li><a href="#">Copier<span class="text-muted kbd">Ctrl + C</span></a></li>
+                    <li><a href="#">Couper<span class="text-muted kbd">Ctrl + X</span></a></li>
+                    <li><a href="#">Coller<span class="text-muted kbd">Ctrl + V</span></a></li>
+                    <li><a href="#">Dupliquer<span class="text-muted kbd">Ctrl + D</span></a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aide <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <!-- A propos -->
-                    <li><a href="#" onClick="msg('info', 'Comme si ça sert à quelquechose...')">Aide sur le blog</a></li>
+                    <li><a href="#" onClick="msg('Comme si ça sert à quelquechose...', 'info')">Aide sur le blog</a></li>
                     <li class="divider"></li>
                     <li><a href="#" data-toggle="modal" data-target="#about">&Agrave; propos de l'application</a></li>
                 </ul>
