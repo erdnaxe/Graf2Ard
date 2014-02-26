@@ -10,7 +10,7 @@
  * Function to scan and add objects
  */
 $(function() {
-    $.getJSON("assets/objects/_objects-list.json", function(data) {
+    $.getJSON("assets/objects/objects-list.json", function(data) {
 
         /*
          * Add objects to groups then show menu

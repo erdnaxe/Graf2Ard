@@ -32,7 +32,7 @@ function writeJSONFile($file, $array) {
 // Listing all JSON files in assets/objects/
 $objects_directory_open = opendir($objects_dir) or die('Erreur');
 while ($Entry = \readdir($objects_directory_open)) {
-    if (strstr($Entry, '.json') && !strstr($Entry, '_')) {
+    if (strstr($Entry, '.json') && !strstr($Entry, 'objects-list')) {
         $list_file[$Entry] = array();
     }
 }
@@ -62,4 +62,4 @@ foreach ($list_file as $file_name => $array) {
 }
 
 // Now it's time to write the file
-writeJSONFile($objects_dir . '_objects-list.json', $sort_list);
+writeJSONFile($objects_dir . 'objects-list.json', $sort_list);
