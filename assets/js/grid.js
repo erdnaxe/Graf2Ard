@@ -56,20 +56,19 @@ function newObject(name, translation_fr, color) {
     });
 }
 
-
 /*
  * Function to make a new grid
  */
 function newGrid() {
     // Remove the settings panel
-    $("#settings").css("visibility", "hidden");
-    isActive = "";
+    hideSettings();
 
     // DESTROY all elements
     $("#sortable").html('');
 
     // Refresh the grid
     $("#sortable").sortable("refresh");
+    lastElementId = 0;
 }
 
 /*
