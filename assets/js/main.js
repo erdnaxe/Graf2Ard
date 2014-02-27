@@ -5,6 +5,7 @@
  * He has been created by erdnaxe.
  * This project is under GPLv2 license.
  */
+console.log('Loading main JS file...');
 
 /*
  * Variable declaration

@@ -5,6 +5,7 @@
  * He has been created by erdnaxe.
  * This project is under GPLv2 license.
  */
+console.log('Loading settings panel JS file...');
 
 /*
  * Fonction to list properties from a JSON file

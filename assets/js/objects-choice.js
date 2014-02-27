@@ -5,6 +5,7 @@
  * He has been created by erdnaxe.
  * This project is under GPLv2 license.
  */
+console.log('Loading object choice JS file...');
 
 /*
  * Function to scan and add objects

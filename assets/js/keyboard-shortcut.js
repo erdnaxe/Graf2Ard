@@ -5,6 +5,7 @@
  * He has been created by erdnaxe.
  * This project is under GPLv2 license.
  */
+console.log('Loading keyboard shortcut JS file...');
 
 // new / open / save
 Mousetrap.bind('mod+n', function(e) {
