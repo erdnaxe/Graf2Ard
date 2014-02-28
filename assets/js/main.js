@@ -8,12 +8,6 @@
 console.log('Loading main JS file...');
 
 /*
- * Variable declaration
- */
-var isActive = "";
-var lastElementId = 0;
-
-/*
  * Show a message of one type: success, info, warning or danger
  * @param string type
  * @param string text

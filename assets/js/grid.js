@@ -8,20 +8,25 @@
 console.log('Loading grid creator JS file...');
 
 /*
+ * Variable declaration
+ */
+var isActive = 0;
+var lastElementId = 0;
+
+/*
  * Function to make an object active
  * @param class element
  */
 function becomeActive(element) {
     if (isActive !== element.attr("id")) {
-        // Removing class to other elements
-        $("*.object").css("box-shadow", "0");
+        // Remove the settings panel
+        hideSettings();
 
         // Making this element active
         element.css("box-shadow", "1px 1px 1px rgba(0, 0, 0, 0.075) inset, 1px 1px 8px rgba(102, 175, 233, 1)");
-        isActive = element.attr("id");
 
-        // Remove the settings panel
-        hideSettings();
+        // Setting the new element to be active
+        isActive = element.attr("id");
 
         // Openning the settings panel
         showSettings(isActive, element);
@@ -30,8 +35,11 @@ function becomeActive(element) {
 
 /*
  * Function to create a new object
+ * @param string name
+ * @param string translation_fr
+ * @param string color
  */
-function newObject(translation_fr, name, color) {
+function newObject(name, translation_fr, color) {
     var id = lastElementId;
 
     // Single ID per element
@@ -109,7 +117,7 @@ function saveGrid() {
     var ArrayOutput = new Array();
     for (i = 0; i < sorted.length; i++) {
         var realId = sorted[i];
-        
+
         ArrayOutput[i] = new Array();
         ArrayOutput[i]["name"] = $("#" + realId).data("name");
         ArrayOutput[i]["translation_fr"] = $("#" + realId).data("translation_fr");

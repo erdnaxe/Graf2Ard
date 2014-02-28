@@ -25,28 +25,30 @@ $(function() {
                     + '</button>';
             tmp += '<ul class="dropdown-menu">';
 
+
             // Show the objects list
             $.each(arrayBlocks, function(blockFile, blockData) {
-                tmp += '<li>';
-                tmp += '<a href="#" id="objects-list" name="' + blockData['name'] + '"'
-                        + ' title="' + blockData['translation_fr'] + '" '
-                        + ' color="' + blockData['color'] + '">';
+                // Filling cache for object
+                tmp += '<li><a href="#" id="objects-list"'
+                        + ' data-name="' + blockData['name'] + '"'
+                        + ' data-translation_fr="' + blockData['translation_fr'] + '"'
+                        + ' data-color="' + blockData['color'] + '"'
+                        + '>';
                 tmp += '<span class="glyphicon glyphicon-stop ' + blockData['color'] + '"> </span> '
                         + blockData['translation_fr'];
-                tmp += '</a>';
-                tmp += '</li>';
+                tmp += '</a></li>';
             });
 
-            tmp += '</ul></div>';
-
-            $("#objects-choice").append(tmp);
+            $("#objects-choice").append(tmp + '</ul></div>');
         });
 
         /*
          * Function to add an object with a dropdown menu
          */
         $("a#objects-list").click(function() {
-            newObject($(this).attr("title"), $(this).attr("name"), $(this).attr("color"));
+            newObject($(this).data("name"),
+                    $(this).data("translation_fr"),
+                    $(this).data("color"));
         });
 
     });

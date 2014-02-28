@@ -58,8 +58,8 @@ function showSettings(id, element) {
     $("#settings-title").html("Paramètres de " + element.data("translation_fr"));
 
     // Setting the buttons
-    $("button#save-object").attr("object-target", id);
-    $("button#remove-object").attr("object-target", id);
+    $("button#save-object").data("target", id);
+    $("button#remove-object").data("target", id);
 
     // Show the settings panel
     $("#settings").css("visibility", "visible");
@@ -73,7 +73,7 @@ function hideSettings() {
     $("#settings").css("visibility", "hidden");
 
     // and disabling the active element
-    $("#" + isActive).removeClass("active");
+    $("#" + isActive).css("box-shadow", "0");
     isActive = "";
     
     // Then a little cleaning...
@@ -85,15 +85,18 @@ function hideSettings() {
  * Function to save an object
  */
 function saveObject(element) {
-    msg("Votre block (" + element.attr("object-target") + ") a bien été sauvegard&eacute;. ", "success");
+    // Catch the target ID
+    var id = element.data("target");
+    
+    msg("Votre block (" + id + ") a bien été sauvegard&eacute;. ", "success");
 }
 
 /*
  * Function to remove an object
  */
 function removeObject(element) {
-    // Catch the ID
-    var id = element.attr("object-target");
+    // Catch the target ID
+    var id = element.data("target");
 
     // Remove the settings panel
     hideSettings();
@@ -105,7 +108,7 @@ function removeObject(element) {
     $("#sortable").sortable("refresh");
 
     // Alert the user
-    msg("Votre block (" + element.attr("object-target") + ") a bien été supprim&eacute;. ", "info");
+    msg("Votre block (" + id + ") a bien été supprim&eacute;. ", "info");
 }
 
 /*
