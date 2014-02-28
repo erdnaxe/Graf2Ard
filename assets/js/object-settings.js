@@ -52,10 +52,10 @@ function listJSONProperties(file) {
  */
 function showSettings(id, element) {
     // Catching the content
-    listJSONProperties("assets/objects/" + element.attr("name") + ".json");
+    listJSONProperties("assets/objects/" + element.data("name") + ".json");
 
     // Filling the content
-    $("#settings-title").html("Paramètres de " + element.html());
+    $("#settings-title").html("Paramètres de " + element.data("translation_fr"));
 
     // Setting the buttons
     $("button#save-object").attr("object-target", id);

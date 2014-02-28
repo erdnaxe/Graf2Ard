@@ -106,9 +106,6 @@ span.yellow	{ color: #fce96d; }
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     border-radius: 7px;
 }
-#sortable > div.active{
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 1px 1px 8px rgba(102, 175, 233, 1);
-}
 
 /* Objects color */
 #sortable > div.orange    { background-color: #eb7b3b !important; }
