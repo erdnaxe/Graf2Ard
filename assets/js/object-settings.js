@@ -11,38 +11,47 @@ console.log('Loading settings panel JS file...');
  * Fonction to list properties from a JSON file
  * @arg string JSONfile
  */
-function listJSONProperties(file) {
-    $.getJSON(file, function(data) {
-        // List all propreties
-        var properties = data["properties"];
-        $.each(properties, function(idProperties, tableProperties) {
+function fillProperties(JSONdata) {
+    // Parse JSON data into array
+    var objProperties = $.parseJSON(JSONdata);
 
-            // List all configuration
-            var returnProperties = "";
-            $.each(tableProperties["body"], function(idTable, tableTable) {
-                returnProperties += '<p>'
-                        + '<label class="control-label" for="' + tableTable["enter_in"] + '">'
-                        + tableTable["name"] + ' : '
-                        + '</label>'
-                        + '<select class="form-control input-sm"'
-                        + ' name="' + tableTable["enter_in"] + '"'
-                        + ' id="' + tableTable["enter_in"] + '">';
+    // Catching content for each properties
+    $.each(objProperties, function(idProperties, tableProperties) {
 
-                $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
-                    returnProperties += '<option value="' + valeurLegalValue + '">' 
+        // List all configuration
+        var returnProperties = "";
+        $.each(tableProperties["body"], function(idTable, tableTable) {
+            returnProperties += '<p>'
+                    + '<label class="control-label" for="' + tableTable["enter_in"] + '">'
+                    + tableTable["name"] + ' : '
+                    + '</label>';
+            returnProperties += '<select class="form-control input-sm"'
+                    + ' name="' + tableTable["enter_in"] + '"'
+                    + ' id="' + tableTable["enter_in"] + '">';
+
+            $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
+                if (valeurLegalValue === tableTable["value"]) {
+                    returnProperties += '<option data-idproperties="' + idProperties + '"'
+                            + ' data-idtable="' + idTable + '"'
+                            + ' value="' + valeurLegalValue + '" selected="selected">'
                             + valeurLegalValue + '</option>';
-                });
-
-                returnProperties += '</select></p>';
+                } else {
+                    returnProperties += '<option data-idproperties="' + idProperties + '"'
+                            + ' data-idtable="' + idTable + '"'
+                            + ' value="' + valeurLegalValue + '">'
+                            + valeurLegalValue + '</option>';
+                }
             });
 
-            // Then display them
-            $("#settings-body").append('<div class="panel panel-primary">'
-                    + '<div class="panel-heading"><h3 class="panel-title">' 
-                    + tableProperties["name"] + '</h3></div>'
-                    + '<div class="panel-body">' + returnProperties + '</div>'
-                    + '</div>');
+            returnProperties += '</select></p>';
         });
+
+        // Then display them
+        $("#settings-body").append('<div class="panel panel-primary">'
+                + '<div class="panel-heading"><h3 class="panel-title">'
+                + tableProperties["name"] + '</h3></div>'
+                + '<div class="panel-body">' + returnProperties + '</div>'
+                + '</div>');
     });
 }
 
@@ -50,16 +59,16 @@ function listJSONProperties(file) {
  * Function to show the settings panel
  * @arg int id
  */
-function showSettings(id, element) {
-    // Catching the content
-    listJSONProperties("assets/objects/" + element.data("name") + ".json");
+function showSettings(element) {
+    // Placing the content
+    fillProperties(element.data("properties"));
 
     // Filling the content
     $("#settings-title").html("Paramètres de " + element.data("translation_fr"));
 
     // Setting the buttons
-    $("button#save-object").data("target", id);
-    $("button#remove-object").data("target", id);
+    $("button#save-object").data("target", element.attr("id"));
+    $("button#remove-object").data("target", element.attr("id"));
 
     // Show the settings panel
     $("#settings").css("visibility", "visible");
@@ -75,7 +84,7 @@ function hideSettings() {
     // and disabling the active element
     $("#" + isActive).css("box-shadow", "0");
     isActive = "";
-    
+
     // Then a little cleaning...
     $("#settings-title").html('');
     $("#settings-body").html('');
@@ -85,9 +94,59 @@ function hideSettings() {
  * Function to save an object
  */
 function saveObject(element) {
-    // Catch the target ID
+    // Catch the target object
     var id = element.data("target");
-    
+    var element2save = $("#" + id);
+
+    // Get the properties array
+    var arrayProperties = $.parseJSON(element2save.data("properties"));
+
+
+
+    // Catch the selected value
+    $("select option:selected").each(function() {
+        alert($(this).attr("value"));
+    });
+
+
+    /* Parse JSON data into array
+     var objProperties = $.parseJSON(JSONdata);
+     
+     // Catching content for each properties
+     $.each(objProperties, function(idProperties, tableProperties) {
+     
+     // List all configuration
+     var returnProperties = "";
+     $.each(tableProperties["body"], function(idTable, tableTable) {
+     returnProperties += '<p>'
+     + '<label class="control-label" for="' + tableTable["enter_in"] + '">'
+     + tableTable["name"] + ' : '
+     + '</label>';
+     returnProperties += '<select class="form-control input-sm"'
+     + ' name="' + tableTable["enter_in"] + '"'
+     + ' id="' + tableTable["enter_in"] + '">';
+     
+     $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
+     if (valeurLegalValue === tableTable["value"]) {
+     returnProperties += '<option value="' + valeurLegalValue + '" selected="selected">'
+     + valeurLegalValue + '</option>';
+     } else {
+     returnProperties += '<option value="' + valeurLegalValue + '">'
+     + valeurLegalValue + '</option>';
+     }
+     });
+     
+     returnProperties += '</select></p>';
+     });
+     
+     // Then display them
+     $("#settings-body").append('<div class="panel panel-primary">'
+     + '<div class="panel-heading"><h3 class="panel-title">'
+     + tableProperties["name"] + '</h3></div>'
+     + '<div class="panel-body">' + returnProperties + '</div>'
+     + '</div>');
+     });*/
+
     msg("Votre block (" + id + ") a bien été sauvegard&eacute;. ", "success");
 }
 

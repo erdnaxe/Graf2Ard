@@ -11,11 +11,13 @@
                 {
                     "name": "Pin output",
                     "enter_in": "pin_output",
+                    "value": "3",
                     "legal_value": ["3", "4"]
                 },
                 {
                     "name": "Value",
                     "enter_in": "pin_value",
+                    "value": "LOW",
                     "legal_value": ["HIGH", "LOW"]
                 }
             ]

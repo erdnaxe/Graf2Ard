@@ -29,15 +29,26 @@ function becomeActive(element) {
         isActive = element.attr("id");
 
         // Openning the settings panel
-        showSettings(isActive, element);
+        showSettings(element);
     }
 }
 
 /*
+ * Function to get object properties
+ * @param string objectName
+ * @returns array properties
+ */
+function getObjectproperties(objectName, element) {
+    $.getJSON("assets/objects/" + objectName + ".json", function(data) {
+        element.data("properties", $.toJSON(data["properties"]));
+    });
+}
+
+/*
  * Function to create a new object
- * @param string name
- * @param string translation_fr
- * @param string color
+ * @param name
+ * @param translation_fr
+ * @param color
  */
 function newObject(name, translation_fr, color) {
     var id = lastElementId;
@@ -60,12 +71,10 @@ function newObject(name, translation_fr, color) {
     newElement.data("translation_fr", translation_fr);
     newElement.data("name", name);
     newElement.data("color", color);
+    getObjectproperties(name, newElement);
 
     // Add the element to the grid by a refresh
     $("#sortable").sortable("refresh");
-
-    // Make the element active
-    becomeActive(newElement);
 
     // On click, the element become active
     newElement.click(function() {
