@@ -1,0 +1,57 @@
+{
+    "name": "move",
+    "translation_fr": "Déplacer",
+    "menu": "Objets communs",
+    "needing_librairies": "motor",
+    "color": "green",
+    "glyphicon": "arrow-up",
+    "properties": [
+        {
+            "name": "Connection",
+            "body": [
+                {
+                    "name": "Pin +5V",
+                    "enter_in": "pin_output5v",
+                    "value": "2",
+                    "legal_value": ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+                },
+                {
+                    "name": "Pin Ground",
+                    "enter_in": "pin_output0v",
+                    "value": "2",
+                    "legal_value": ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+                }
+            ]
+        },
+        {
+            "name": "Direction",
+            "body": [
+                {
+                    "name": "Rotation",
+                    "enter_in": "rotary",
+                    "value": "normal",
+                    "legal_value": ["normal", "inverse", "stop"]
+                },
+                {
+                    "name": "Vitesse",
+                    "enter_in": "speed",
+                    "value": "70",
+                    "legal_value": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+                }
+            ]
+        }
+    ],
+    "code": [
+        {
+            "function": "setup",
+            "code": [
+                "pinMode($pin_output5v$, OUTPUT);",
+                "pinMode($pin_output0v$, OUTPUT);"
+            ]
+        },
+        {
+            "function": "loop",
+            "code": "digitalWrite($pin_output5v$, pin_value);"
+        }
+    ]
+}

@@ -83,7 +83,7 @@ footer{
 #sortable { 
     width: 100%;
 }
-#sortable > div { 
+#sortable > div {
     float: left;
 
     margin: 48px 15px 48px 9px;
@@ -94,10 +94,23 @@ footer{
 
     color: #000;
     background-color: #fff;
-    background-image: url("../img/object.png");
 
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     border-radius: 7px;
+}
+
+#sortable > div > span.object-text {
+    display: block;
+    min-width: 48px;
+    font-size: medium;
+}
+
+#sortable > div > span.glyphicon {
+    display: block;
+    float: right;
+    margin-top: 12px;
+    margin-right: 5px;
+    font-size: xx-large;
 }
 
 /* Objects color */
@@ -107,15 +120,8 @@ footer{
 #sortable > div.yellow    { background-color: #fce96d !important; }
 
 /*
- * Alert align with grid
- 
-.alert-container{
-    margin-top: 24px;
-    min-height: 24px;
+ * Object properties Hack
+ */
+.panel-body{
+    padding-bottom: 0 !important;
 }
-
-.alert{
-    margin: 0 2px 24px 9px;
-    padding: 15px 14px;
-    max-height: 48px;
-}*/

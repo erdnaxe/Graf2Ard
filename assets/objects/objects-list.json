@@ -1,1 +1,1 @@
-{"Base":{"led.json":{"name":"led","translation_fr":"LED","color":"orange"},"example.json":{"name":"example","translation_fr":"TEXT","color":"blue"}}}
+{"Objets communs":{"sound.json":{"name":"sound","translation_fr":"Jouer un son","color":"green","glyphicon":"volume-up"},"move.json":{"name":"move","translation_fr":"D\u00e9placer","color":"green","glyphicon":"arrow-up"}}}
