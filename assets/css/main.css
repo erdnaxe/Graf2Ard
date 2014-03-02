@@ -17,14 +17,6 @@ body{
 
 .modal{ overflow-y: hidden !important; }
 
-.fork-banner{
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-    z-index: 1001;
-}
-
 /*
  * Alert align with grid
  */
@@ -35,10 +27,22 @@ body{
 
 .alert{
     margin: 0 2px 24px 9px;
-    padding: 13px 14px;
+    padding: 15px 14px;
     max-height: 48px;
 }
 
+/*
+ * Footer
+*/
+footer{
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0 !important;
+    height: 46px;
+    width: 100%;
+}
 
 /*
  * NavBar
@@ -46,7 +50,6 @@ body{
 .navbar{
     margin-bottom: 0 !important;
     min-height: 48px !important;
-    height: 48px;
     border: 0 !important;
 }
 
@@ -55,7 +58,7 @@ body{
 }
 
 .jumbotron{
-    padding-top: 12px !important;
+    padding-top: 10px !important;
     padding-bottom: 12px !important;
     height: 48px !important;
     margin-bottom: 0 !important;
@@ -72,17 +75,18 @@ body{
     top: 3px;
 }
 
-
 /*
  * Object selector dropdown
  */
+.dropdown-menu > li > a{
+    padding: 5px 15px;
+}
 
 /* Color in dropdown objects selector */
 span.orange	{ color: #eb7b3b; }
 span.blue	{ color: #5ab7af; }
 span.green	{ color: #c6d75e; }
 span.yellow	{ color: #fce96d; }
-
 
 /*
  * GRID (sortable)

@@ -28,7 +28,7 @@
         <meta name="description" content="Un générateur de code Arduino à partir de grafcet." />
         <meta name="author" content="erdnaxe" />
         <meta charset="utf-8" />
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="vendor/bootstrap/css/bootswatch-yeti.min.css" rel='stylesheet' type='text/css' />
         <link href="assets/css/main.css" rel='stylesheet' type='text/css' />
 
         <!-- FORK ME RIBBON -->
@@ -52,27 +52,10 @@
         <!-- NavBar (JavaScript) --> 
         <div class="navbar navbar-default navbar-static-top" role="navigation" id="navbar-content"></div>
 
-        <!-- GitHub Ribbon -->
-        <div class="github-fork-ribbon-wrapper right">
-            <div class="github-fork-ribbon" style="background-color: #555;">
-                <a href="https://github.com/erdnaxe/Graf2Ard" target="about:blank">Fork-moi sur GitHub</a>
-            </div>
-        </div>
-
-        <div class="jumbotron">
-
-            <!-- Menu dropdown for objects -->
-            <div class="container" id="objects-choice"></div>
-
-        </div>
+        <!-- Objects choice -->
+        <div class="jumbotron"><div class="container" id="objects-choice"></div></div>
 
         <div class="container-fluid">
-            <div class="row alert-container">
-
-                <!-- Javascript alert location -->
-                <div class="col-xs-12" id="alert-location"></div>
-
-            </div>
             <div class="row">
                 <div class="col-xs-9">
 
@@ -82,9 +65,29 @@
                 </div>
 
                 <!-- Settings panel -->
-                <div class="col-xs-3" id="settings" style="visibility: hidden"></div>
+                <div class="col-xs-3" id="settings" style="visibility: hidden; margin-top: 24px;"></div>
             </div>
         </div>
+
+        <footer class="well well-sm">
+            <div class="container">
+                <div class="pull-left">
+                    &copy; erdnaxe 2014 - Alpha 0.2
+
+                    <!-- Javascript alert location -->
+                    <div class="row alert-container">
+                        <div class="col-xs-12" id="alert-location"></div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <!-- GitHub Buttons -->
+                    <iframe src="vendor/gh-buttons/github-btn.html?user=erdnaxe&repo=graf2ard&type=watch"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>  
+                    <iframe src="vendor/gh-buttons/github-btn.html?user=erdnaxe&repo=graf2ard&type=fork"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+                </div>
+            </div>
+        </footer>
 
         <!-- JQuery / UI -->
         <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
