@@ -102,14 +102,14 @@ function openGrid(fileContent, fileName) {
     var projectNameReg = new RegExp("(.json)", "g");
     changeProjectName(fileName.replace(projectNameReg, ""));
 
-    alert(fileContent);
+    // Parse the file content
+    var ArrayContent = $.parseJSON(fileContent);
+    alert($.toJSON(ArrayContent));
 
-    // Sort objects
-    /*var ArrayOutput = new Array();
-     for (i = 0; i < sorted.length; i++) {
-     var realId = sorted[i];
-     ArrayOutput[i] = $("#" + realId).attr("name");
-     }*/
+    // Construct the new grid
+    $.each(ArrayContent, function(id, data) {
+        alert("New block : " + id + " | " + $.toJSON(data));
+    });
 }
 
 /*
