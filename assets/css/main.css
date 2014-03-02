@@ -7,64 +7,29 @@
  */
 
 /*
- * Page CSS
+ * Height and overflow fix
  */
-body{
-    background: #fff left top repeat url("../img/grid-bg.png");
-    overflow-y: scroll !important;
+body, html{
+    height: 100%;
     overflow-x: hidden;
 }
-
+body{
+    overflow-y: scroll !important;
+}
 .modal{ overflow-y: hidden !important; }
 
 /*
- * Alert align with grid
+ * Fixed elements
  */
-.alert-container{
-    margin-top: 24px;
-    min-height: 24px;
-}
-
-.alert{
-    margin: 0 2px 24px 9px;
-    padding: 15px 14px;
-    max-height: 48px;
-}
-
-/*
- * Footer
-*/
-footer{
-    position: fixed;
-    z-index: 100;
-    bottom: 0;
-    left: 0;
-    margin-bottom: 0 !important;
-    height: 46px;
-    width: 100%;
-}
-
-/*
- * NavBar
- */
+/* NavBar */
 .navbar{
-    margin-bottom: 0 !important;
+    margin-right: 15px !important;
     min-height: 48px !important;
     border: 0 !important;
 }
-
 .navbar-nav > li > a{
     padding-bottom: 13px;
 }
-
-.jumbotron{
-    padding-top: 10px !important;
-    padding-bottom: 12px !important;
-    height: 48px !important;
-    margin-bottom: 0 !important;
-}
-
-/* Hotkey in dropdown */
 .dropdown-menu > li > a {
     position: relative;
     padding-right: 70px;
@@ -75,22 +40,46 @@ footer{
     top: 3px;
 }
 
-/*
- * Object selector dropdown
- */
+/* Object Choice */
+.jumbotron{
+    position: fixed;
+    top: 48px;
+    z-index: 1020;
+    right: 15px !important;
+    width: 100%;
+
+    padding-top: 10px !important;
+    padding-bottom: 12px !important;
+    height: 48px !important;
+}
 .dropdown-menu > li > a{
     padding: 5px 15px;
 }
-
-/* Color in dropdown objects selector */
 span.orange	{ color: #eb7b3b; }
 span.blue	{ color: #5ab7af; }
 span.green	{ color: #c6d75e; }
 span.yellow	{ color: #fce96d; }
 
+/* Footer */
+footer{
+    position: fixed;
+    z-index: 1010;
+    right: 15px !important;
+    bottom: 0;
+    margin-bottom: 0 !important;
+    height: 46px;
+    width: 100%;
+}
+
 /*
- * GRID (sortable)
+ * Grid
  */
+.grid-container{
+    background: #fff left top repeat url("../img/grid-bg.png");
+    min-height: 100% !important;
+    padding-top: 96px;
+    padding-bottom: 48px;
+}
 #sortable { 
     width: 100%;
 }
@@ -116,3 +105,17 @@ span.yellow	{ color: #fce96d; }
 #sortable > div.blue      { background-color: #5ab7af !important; }
 #sortable > div.green     { background-color: #c6d75e !important; }
 #sortable > div.yellow    { background-color: #fce96d !important; }
+
+/*
+ * Alert align with grid
+ 
+.alert-container{
+    margin-top: 24px;
+    min-height: 24px;
+}
+
+.alert{
+    margin: 0 2px 24px 9px;
+    padding: 15px 14px;
+    max-height: 48px;
+}*/

@@ -15,15 +15,26 @@ var lastElementId = 0;
 var projectName = "Nouveau fichier";
 
 /*
- * Show a message of one type: success, info, warning or danger
- * @param string type
+ * Show a message in the status bar
  * @param string text
- * @param string title
+ * @param string type
  */
 function msg(text, type) {
-    $("#alert-location").append('<div class="alert alert-' + type + ' fade in">'
-            + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'
-            + '<p>' + text + '</p></div>');
+    //Remove old alert and add the new one
+    $("#alert-location").html('');
+    $("#alert-location").html(text);
+
+    // Set a color
+    if (type === "success")
+        $("#alert-location").css('color', '#43AC6A');
+    else if (type === "info")
+        $("#alert-location").css('color', '#5BC0DE');
+    else if (type === "warning")
+        $("#alert-location").css('color', '#E99002');
+    else if (type === "danger")
+        $("#alert-location").css('color', '#F04124');
+    else
+        $("#alert-location").css('color', '#000');
 }
 
 /*
