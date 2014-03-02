@@ -25,7 +25,6 @@ $(function() {
                     + '</button>';
             tmp += '<ul class="dropdown-menu">';
 
-
             // Show the objects list
             $.each(arrayBlocks, function(blockFile, blockData) {
                 // Filling cache for object
@@ -33,8 +32,9 @@ $(function() {
                         + ' data-name="' + blockData['name'] + '"'
                         + ' data-translation_fr="' + blockData['translation_fr'] + '"'
                         + ' data-color="' + blockData['color'] + '"'
+                        + ' data-glyphicon="' + blockData['glyphicon'] + '"'
                         + '>';
-                tmp += '<span class="glyphicon glyphicon-stop ' + blockData['color'] + '"> </span> '
+                tmp += '<span class="glyphicon glyphicon-' + blockData['glyphicon'] + ' ' + blockData['color'] + '"> </span> '
                         + blockData['translation_fr'];
                 tmp += '</a></li>';
             });
@@ -48,7 +48,8 @@ $(function() {
         $("a#objects-list").click(function() {
             newObject($(this).data("name"),
                     $(this).data("translation_fr"),
-                    $(this).data("color"));
+                    $(this).data("color"),
+                    $(this).data("glyphicon"));
         });
 
     });

@@ -4,6 +4,7 @@
     "menu": "Base",
     "needing_librairies": null,
     "color": "blue",
+    "glyphicon": "stop",
     "properties": [
         {
             "name": "Connection 2",

@@ -44,7 +44,7 @@ function getObjectproperties(objectName, element) {
  * @param translation_fr
  * @param color
  */
-function newObject(name, translation_fr, color) {
+function newObject(name, translation_fr, color, glyphicon) {
     var id = lastElementId;
 
     // Single ID per element
@@ -59,12 +59,14 @@ function newObject(name, translation_fr, color) {
     // Here we want an object with a color and a name
     newElement.addClass("object");
     newElement.addClass(color);
-    newElement.html(translation_fr);
+    newElement.html('<span class="object-text">' + translation_fr + '</span>'
+            + '<span class="glyphicon glyphicon-' + glyphicon + '"></span>');
 
     // Adding datas to the new element
     newElement.data("translation_fr", translation_fr);
     newElement.data("name", name);
     newElement.data("color", color);
+    newElement.data("glyphicon", glyphicon);
     getObjectproperties(name, newElement);
 
     // Add the element to the grid by a refresh

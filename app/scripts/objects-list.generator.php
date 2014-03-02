@@ -59,6 +59,7 @@ foreach ($list_file as $file_name => $array) {
     $sort_list[$obj["menu"]][$file_name]["name"] = $obj["name"];
     $sort_list[$obj["menu"]][$file_name]["translation_fr"] = $obj["translation_fr"];
     $sort_list[$obj["menu"]][$file_name]["color"] = $obj["color"];
+    $sort_list[$obj["menu"]][$file_name]["glyphicon"] = $obj["glyphicon"];
 }
 
 // Now it's time to write the file
