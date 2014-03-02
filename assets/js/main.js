@@ -8,6 +8,13 @@
 console.log('Loading main JS file...');
 
 /*
+ * Variable declaration
+ */
+var isActive = 0;
+var lastElementId = 0;
+var projectName = "Nouveau fichier";
+
+/*
  * Show a message of one type: success, info, warning or danger
  * @param string type
  * @param string text
@@ -46,12 +53,17 @@ $(function() {
          * Upload a file
          */
         $('#fileToUpload').change(function() {
+            // Get the file
             var file = $('#fileToUpload').get(0).files[0];
             var read = new FileReader();
+
+            // Read the file and sand it to the function
             read.readAsBinaryString(file);
             read.onloadend = function() {
-                openGrid(read.result);
+                openGrid(read.result, file.name);
             };
+
+            // Hide the dialog
             $('#open').modal('hide');
         });
     });
@@ -70,6 +82,16 @@ $(function() {
     });
 
 });
+
+/*
+ * Change the project name
+ */
+function changeProjectName(newName) {
+    // Save the name into a global variable 
+    projectName = newName;
+
+    $("title").html(newName + " - Graf2Ard");
+}
 
 /*
  * Editing function

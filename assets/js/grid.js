@@ -8,12 +8,6 @@
 console.log('Loading grid creator JS file...');
 
 /*
- * Variable declaration
- */
-var isActive = 0;
-var lastElementId = 0;
-
-/*
  * Function to make an object active
  * @param class element
  */
@@ -100,9 +94,13 @@ function newGrid() {
 /*
  * Function to open the grid as JSON
  */
-function openGrid(fileContent) {
+function openGrid(fileContent, fileName) {
     // Remove the old grid
     newGrid();
+
+    // Set the new project name
+    var projectNameReg = new RegExp("(.json)", "g");
+    changeProjectName(fileName.replace(projectNameReg, ""));
 
     alert(fileContent);
 
@@ -123,22 +121,21 @@ function saveGrid() {
     var sorted = $("#sortable").sortable("toArray");
 
     // Sort objects
-    var ArrayOutput = new Array();
+    var ArrayOutput = {};
     for (i = 0; i < sorted.length; i++) {
         var realId = sorted[i];
 
-        ArrayOutput[i] = new Array();
+        // Construct a array in the object
+        ArrayOutput[i] = {};
         ArrayOutput[i]["name"] = $("#" + realId).data("name");
         ArrayOutput[i]["translation_fr"] = $("#" + realId).data("translation_fr");
         ArrayOutput[i]["color"] = $("#" + realId).data("color");
+        ArrayOutput[i]["properties"] = $.parseJSON($("#" + realId).data("properties"));
     }
 
     // Open a download box to save the file
-    var blob = new Blob([JSON.stringify(ArrayOutput)], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "NewProject.json");
-
-    // Show the message
-    msg("Fichier enregistré !", "success");
+    var blob = new Blob([$.toJSON(ArrayOutput)], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, projectName + ".json");
 }
 
 /*

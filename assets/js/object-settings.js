@@ -101,53 +101,25 @@ function saveObject(element) {
     // Get the properties array
     var arrayProperties = $.parseJSON(element2save.data("properties"));
 
-
-
-    // Catch the selected value
     $("select option:selected").each(function() {
-        alert($(this).attr("value"));
+        // Catch the array of this select
+        var arraySelect = arrayProperties[$(this).data('idproperties')]['body'][$(this).data('idtable')];
+
+        // Catch the selected value
+        var valueSelect = $(this).attr('value');
+
+        // Put the value in the array
+        arraySelect['value'] = valueSelect;
+
+        // Save the array into the main array
+        arrayProperties[$(this).data('idproperties')]['body'][$(this).data('idtable')] = arraySelect;
     });
 
+    // Save the main array into the object
+    element2save.data("properties", $.toJSON(arrayProperties));
 
-    /* Parse JSON data into array
-     var objProperties = $.parseJSON(JSONdata);
-     
-     // Catching content for each properties
-     $.each(objProperties, function(idProperties, tableProperties) {
-     
-     // List all configuration
-     var returnProperties = "";
-     $.each(tableProperties["body"], function(idTable, tableTable) {
-     returnProperties += '<p>'
-     + '<label class="control-label" for="' + tableTable["enter_in"] + '">'
-     + tableTable["name"] + ' : '
-     + '</label>';
-     returnProperties += '<select class="form-control input-sm"'
-     + ' name="' + tableTable["enter_in"] + '"'
-     + ' id="' + tableTable["enter_in"] + '">';
-     
-     $.each(tableTable["legal_value"], function(idLegalValue, valeurLegalValue) {
-     if (valeurLegalValue === tableTable["value"]) {
-     returnProperties += '<option value="' + valeurLegalValue + '" selected="selected">'
-     + valeurLegalValue + '</option>';
-     } else {
-     returnProperties += '<option value="' + valeurLegalValue + '">'
-     + valeurLegalValue + '</option>';
-     }
-     });
-     
-     returnProperties += '</select></p>';
-     });
-     
-     // Then display them
-     $("#settings-body").append('<div class="panel panel-primary">'
-     + '<div class="panel-heading"><h3 class="panel-title">'
-     + tableProperties["name"] + '</h3></div>'
-     + '<div class="panel-body">' + returnProperties + '</div>'
-     + '</div>');
-     });*/
-
-    msg("Votre block (" + id + ") a bien été sauvegard&eacute;. ", "success");
+    // Alert the user
+    msg("Votre block (" + element2save.data('translation_fr') + ") a bien été sauvegard&eacute;. ", "success");
 }
 
 /*
